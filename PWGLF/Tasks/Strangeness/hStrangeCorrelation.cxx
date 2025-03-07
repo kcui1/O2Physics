@@ -1713,3 +1713,4 @@ WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
   return WorkflowSpec{
     adaptAnalysisTask<HStrangeCorrelation>(cfgc)};
 }
+ 
