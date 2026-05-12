@@ -1218,7 +1218,7 @@ struct HStrangeCorrelation {
 
         static_for<0, 3>([&](auto i) {
           constexpr int Index = i.value;
-          if ((Index == IndexOmegaMinus || Index == IndexOmegaPlus) && assocCandidate.compatible(Index, trackSelection.dEdxCompatibility) && std::abs(assocCandidate.invMassNSigma(Index - 2)) < massWindowConfigurations.nSigmaNearXiMassCenter) {
+          if ((Index == IndexOmegaMinus || Index == IndexOmegaPlus) && assocCandidate.compatible(Index - 2, trackSelection.dEdxCompatibility) && std::abs(assocCandidate.invMassNSigma(Index - 2)) < massWindowConfigurations.nSigmaNearXiMassCenter) {
             return;
           }
           float efficiency = 1.0f;
@@ -2441,7 +2441,7 @@ struct HStrangeCorrelation {
 
       static_for<0, 3>([&](auto i) {
         constexpr int Index = i.value;
-        if ((Index == IndexOmegaMinus || Index == IndexOmegaPlus) && casc.compatible(Index, trackSelection.dEdxCompatibility) && std::abs(casc.invMassNSigma(Index - 2)) < massWindowConfigurations.nSigmaNearXiMassCenter) {
+        if ((Index == IndexOmegaMinus || Index == IndexOmegaPlus) && casc.compatible(Index - 2, trackSelection.dEdxCompatibility) && std::abs(casc.invMassNSigma(Index - 2)) < massWindowConfigurations.nSigmaNearXiMassCenter) {
           return;
         }
         float efficiency = 1.0f;
